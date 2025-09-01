@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
@@ -40,7 +39,6 @@
 
     </LinearLayout>
 
-    <!-- Dashboard Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -56,114 +54,54 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dashboard"
+                android:text="Drink History"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:textColor="@color/hydra_blue"
-                android:layout_marginBottom="40dp" />
+                android:textColor="@color/black"
+                android:layout_marginBottom="24dp" />
 
-            <!-- Circular Progress -->
-            <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="32dp">
-
-                <ProgressBar
-                    android:id="@+id/circularProgress"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true"
-                    android:max="100"
-                    android:progress="0"
-                    android:progressDrawable="@drawable/circular_progress" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <TextView
-                        android:id="@+id/tvPercentage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0%"
-                        android:textSize="36sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/hydra_blue" />
-
-                    <TextView
-                        android:id="@+id/tvProgress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0 / 2000ml"
-                        android:textSize="16sp"
-                        android:textColor="@color/hydra_blue" />
-
-                    <TextView
-                        android:id="@+id/tvLastDrink"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Last Drink: 250 mL"
-                        android:textSize="12sp"
-                        android:textColor="@color/gray"
-                        android:layout_marginTop="8dp" />
-
-                    <TextView
-                        android:id="@+id/tvTimeAgo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1 day ago"
-                        android:textSize="12sp"
-                        android:textColor="@color/gray" />
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <!-- Connection Status -->
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvTodayTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:layout_marginBottom="32dp">
+                android:text="Today: 0.5 L"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
 
-                <View
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:background="@drawable/circle_green"
-                    android:layout_marginEnd="8dp"
-                    android:layout_gravity="center_vertical" />
-
-                <TextView
-                    android:id="@+id/tvConnectionStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Connected"
-                    android:textColor="@color/hydra_green"
-                    android:textSize="14sp" />
+            <LinearLayout
+                android:id="@+id/historyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginBottom="24dp">
 
             </LinearLayout>
 
-            <!-- Add Intake Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAddIntake"
+            <TextView
+                android:id="@+id/tvYesterdayTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yesterday: 3.5 L"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="+ Add Intake"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/hydra_blue"
-                android:layout_marginBottom="32dp" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginBottom="24dp">
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </ScrollView>
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -178,7 +116,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:clickable="true"
-            android:background="?android:attr/selectableItemBackground">
+            android:background="@color/hydra_blue">
 
             <ImageButton
                 android:id="@+id/btnHistory"
@@ -192,7 +130,8 @@
                 android:layout_height="wrap_content"
                 android:text="History"
                 android:textSize="12sp"
-                android:textColor="@color/gray"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:layout_marginTop="4dp" />
 
         </LinearLayout>
@@ -204,7 +143,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:clickable="true"
-            android:background="@color/hydra_blue">
+            android:background="?android:attr/selectableItemBackground">
 
             <ImageButton
                 android:id="@+id/btnHome"
@@ -218,8 +157,7 @@
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="12sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                android:textColor="@color/gray"
                 android:layout_marginTop="4dp" />
 
         </LinearLayout>
