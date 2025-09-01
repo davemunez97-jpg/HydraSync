@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hydrasync.R
-import com.example.hydrasync.SettingsActivity // Or comment out if not created
+//import com.example.hydrasync.SettingsActivity // PLEASE MAKE SETTINGSACTIVITY
 import com.example.hydrasync.history.DrinkEntry
 import com.example.hydrasync.history.HistoryView
 import com.example.hydrasync.history.HistoryPresenter
@@ -71,11 +71,15 @@ class HistoryActivity : AppCompatActivity(), HistoryView {
             startActivity(intent)
             finish()
         }
-
+/*
         btnSettings.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
             finish()
+
+            //NEED TO MAKE SETTINGSACTIVITY
+            }
+ */
         }
     }
-}
+
