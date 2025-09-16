@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hydrasync.R
 import com.example.hydrasync.login.LoginActivity
+import com.example.hydrasync.settings.SettingsActivity
 import com.google.android.material.button.MaterialButton
 
 class HomeActivity : AppCompatActivity(), HomeContract.View {
@@ -106,7 +107,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     }
 
     override fun navigateToSettings() {
-        Toast.makeText(this, "Settings feature coming soon!", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onDestroy() {
